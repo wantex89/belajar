@@ -1,8 +1,8 @@
 {% extends 'template/index.volt' %}
- 
+
 {% block content %}
-  
- 
+
+
 <div class="container">
   <div class="jumbotron">
     <div class="container-fluid">
@@ -13,12 +13,11 @@
   </div>
 </div>
 
-<div class="container-fluid">  
+<div class="container-fluid">
     <hr>
     <div class="row">
         <div class="col-xs-12">
             <footer>
-                <p>&copy; Tutorial Memadukan Template Bootstrap dengan Phalcon </p>
             </footer>
         </div>
     </div>
