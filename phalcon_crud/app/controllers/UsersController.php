@@ -1,5 +1,5 @@
 <?php
- 
+
 use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 
@@ -35,7 +35,7 @@ class UsersController extends ControllerBase
 
         $users = Users::find($parameters);
         if (count($users) == 0) {
-            $this->flash->notice("The search did not find any users");
+            $this->flash->notice("User tidak ditemukan");
 
             $this->dispatcher->forward([
                 "controller" => "users",
@@ -73,7 +73,7 @@ class UsersController extends ControllerBase
 
             $user = Users::findFirstByid($id);
             if (!$user) {
-                $this->flash->error("user was not found");
+                $this->flash->error("User tidak ditemukan");
 
                 $this->dispatcher->forward([
                     'controller' => "users",
@@ -89,7 +89,7 @@ class UsersController extends ControllerBase
             $this->tag->setDefault("name", $user->name);
             $this->tag->setDefault("email", $user->email);
             $this->tag->setDefault("address", $user->address);
-            
+
         }
     }
 
@@ -111,7 +111,7 @@ class UsersController extends ControllerBase
         $user->name = $this->request->getPost("name");
         $user->email = $this->request->getPost("email", "email");
         $user->address = $this->request->getPost("address");
-        
+
 
         if (!$user->save()) {
             foreach ($user->getMessages() as $message) {
@@ -126,7 +126,7 @@ class UsersController extends ControllerBase
             return;
         }
 
-        $this->flash->success("user was created successfully");
+        $this->flash->success("User berhasil ditambahkan");
 
         $this->dispatcher->forward([
             'controller' => "users",
@@ -154,7 +154,7 @@ class UsersController extends ControllerBase
         $user = Users::findFirstByid($id);
 
         if (!$user) {
-            $this->flash->error("user does not exist " . $id);
+            $this->flash->error("User tidak ditemukan" . $id);
 
             $this->dispatcher->forward([
                 'controller' => "users",
@@ -167,7 +167,7 @@ class UsersController extends ControllerBase
         $user->name = $this->request->getPost("name");
         $user->email = $this->request->getPost("email", "email");
         $user->address = $this->request->getPost("address");
-        
+
 
         if (!$user->save()) {
 
@@ -184,7 +184,7 @@ class UsersController extends ControllerBase
             return;
         }
 
-        $this->flash->success("user was updated successfully");
+        $this->flash->success("User berhasil diupdate");
 
         $this->dispatcher->forward([
             'controller' => "users",
@@ -201,7 +201,7 @@ class UsersController extends ControllerBase
     {
         $user = Users::findFirstByid($id);
         if (!$user) {
-            $this->flash->error("user was not found");
+            $this->flash->error("User tidak ditemukan");
 
             $this->dispatcher->forward([
                 'controller' => "users",
@@ -225,7 +225,7 @@ class UsersController extends ControllerBase
             return;
         }
 
-        $this->flash->success("user was deleted successfully");
+        $this->flash->success("User berhasil dihapus");
 
         $this->dispatcher->forward([
             'controller' => "users",

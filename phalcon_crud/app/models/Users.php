@@ -44,7 +44,7 @@ class Users extends \Phalcon\Mvc\Model
             new EmailValidator(
                 [
                     'model'   => $this,
-                    'message' => 'Please enter a correct email address',
+                    'message' => 'Silahkan masukkan alamat email yang sesuai',
                 ]
             )
         );

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CRUD PHALCON</title>
+  <title>PHALCON CRUD</title>
   {{ stylesheet_link('css/bootstrap.min.css') }}
   {{ stylesheet_link('css/navbar-fixed-top.css') }}
   {{ javascript_include('js/bootstrap.min.js') }}
@@ -21,7 +21,7 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
              </button>
-             <a class="navbar-brand" href="#">Latihan</a>
+             <a class="navbar-brand" href="#">CRUD</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="navbarCollapse">
